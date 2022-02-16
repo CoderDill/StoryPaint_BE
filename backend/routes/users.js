@@ -46,24 +46,6 @@ router.post("/login", async function (req, res, next) {
   }
 });
 
-// router.patch("/:username", async (req, res, next) => {
-//   try {
-//     const { username } = req.params;
-//     const { password } = req.body;
-//     const hashedPassword = await bcrypt.hash(password, 12);
-
-//     const results = await db.query(
-//       "UPDATE users SET username=$1, password=$2 WHERE username=$3 RETURNING username",
-//       [username, hashedPassword]
-//     );
-//     if (results.rows.length === 0) {
-//       throw new ExpressError(`Can't update user with username of ${username}`, 404);
-//     }
-//     return res.send({ user: results.rows[0] });
-//   } catch (e) {
-//     return next(e);
-//   }
-// });
 
 router.delete("/:username", async (req, res, next) => {
   try {
